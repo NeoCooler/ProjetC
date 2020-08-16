@@ -4,6 +4,8 @@ $myDocFolder=[Environment]::GetFolderPath("MyDocuments")
 
 $Dossier_Facture=($myDocFolder + "\ProjetC\Factures\")
 
+New-Item -ItemType Directory -Force -Path $Dossier_Facture
+
 $ext = ".xltx"
 
 $Template=$myDocFolder + "\ProjetC\Resources\Template$ext"
@@ -44,7 +46,7 @@ $notify = new-object system.windows.forms.notifyicon
 $notify.icon = $icon
 $notify.visible = $true
 $Title = "Nouvelle Facture"
-$message = "Nouvelle Facture créer dans :           $Date\$Nomdufichier                       Vous n'avez plus qu'a la completé ;-)"
+$message = "Nouvelle Facture crÃ©er dans :           $Date\$Nomdufichier                       Vous n'avez plus qu'a la completÃ© ;-)"
 $notify.showballoontip(10,$title,$Message, [system.windows.forms.tooltipicon]::info)
 
 exit
